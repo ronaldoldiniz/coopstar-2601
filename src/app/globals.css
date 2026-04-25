@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0066cc;
+  --color-primary-light: #0099cc;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1e293b; /* Slate 800 for better readability than pure black */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a; /* Slate 900 for dark mode */
+    --foreground: #f8fafc; /* Slate 50 */
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* Animação de scroll por âncoras */
+}
+
+/* Utilitário para o fundo em desfoque */
+.glass {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background-color: rgba(15, 23, 42, 0.7);
+  }
+}
